@@ -1,0 +1,2 @@
+class CryptocoinsController < ApplicationController
+end

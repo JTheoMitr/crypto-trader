@@ -1,0 +1,5 @@
+<h3> All Availabe Cryptocoin Types: </h3>
+
+<ul> <% @cryptocoins.each do |coin| %>
+<%= coin.name %> is currently at: <%= coin.dollar_value %> </br>
+<% end %></ul>

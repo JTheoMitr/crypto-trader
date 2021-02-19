@@ -1,5 +1,5 @@
 <h3> All Investments: </h3>
 
 <ul> <% @investments.each do |inv| %>
-<%= inv.anount %> of <%= inv.cryptocoin %> </br>
+$<%= inv.amount %> of <%= inv.cryptocoin.name %> </br>
 <% end %></ul>

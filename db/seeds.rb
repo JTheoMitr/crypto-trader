@@ -17,4 +17,4 @@ graph = Cryptocoin.create(name: 'The Graph', dollar_value: 2.25)
 compound = Cryptocoin.create(name: 'Compound', dollar_value: 465.99)
 stellar = Cryptocoin.create(name: 'Stellar Lumens', dollar_value: 0.5)
 
-invest_one = u.investments.create(amount: 500, cryptocoin: btc)
+invest_one = u.investments.create(amount: 500.55, cryptocoin: btc)

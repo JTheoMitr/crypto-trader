@@ -1,20 +1,31 @@
 class InvestmentsController < ApplicationController
 
-    def show
-        @investment = Investment.find(params[:id])
-      end
-
-    def index
-        @investments = Investment.all
-    end
 
     def new
         @investment = Investment.new
     end    
 
     def create
-        investment = Investment.create(investment_params)
-        redirect_to investment
+        @investment = current_user.investments.build(investment_params)
+        if @investment.save
+          redirect_to investment_path(@investment)
+        else
+          render :new
+        end
+    end
+
+    def index
+      @investments = Investment.all
+    end
+
+    def show
+      @investment = Investment.find(params[:id])
+    end
+
+    def edit
+    end
+
+    def update
     end
 
 private

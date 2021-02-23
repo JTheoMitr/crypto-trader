@@ -12,6 +12,10 @@
 
   <body>
   <%= button_to("Log In With Google", '/auth/google_oauth2') %>
+  <%= link_to("Sign Up", '/signup') %>
+  <%= link_to("Log In With Crypto Trader", '/login') %>
+  <%= link_to("Log Out", '/logout', method: 'delete') %>
+
     <%= yield %>
   </body>
 </html>

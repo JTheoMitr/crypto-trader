@@ -16,7 +16,7 @@ class InvestmentsController < ApplicationController
     end
 
     def index
-      @investments = Investment.all
+      @investments = current_user.investments
     end
 
     def show

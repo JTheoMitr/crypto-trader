@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # LOGIN and LOGOUT Through Crypto Trader
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -8,10 +10,16 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
 
-  resources :investments
-  resources :cryptocoins
+  # Resources for Investments and Crypto
 
+  resources :investments
+  
+  resources :cryptocoins, only: [:show, :index] do
+      resources :investments
+  end
+
+  # OMNIAUTH
+  
   get '/auth/:provider/callback', to: 'sessions#omniauth'
   
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

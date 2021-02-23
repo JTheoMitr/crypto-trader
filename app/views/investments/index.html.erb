@@ -3,5 +3,5 @@
 <h3> All Investments: </h3>
 
 <ul> <% @investments.each do |inv| %>
-$<%= link_to inv.amount, investment_path(inv) %> of <%= inv.cryptocoin.name %> on <%= @investment.created_at.strftime("%B %-d, %Y at %H:%M %p") %> </br>
+$<%= link_to inv.amount, investment_path(inv) %> of <%= inv.cryptocoin.name %> on <%= inv.created_at.strftime("%B %-d, %Y at %H:%M %p") %> </br>
 <% end %></ul>

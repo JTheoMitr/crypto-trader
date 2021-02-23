@@ -1,5 +1,9 @@
 <h1> Log In </h1>
 
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %> <br><br>
+
 <%= form_with(url: '/login') do |f| %>
 
     <%= f.label :email %>

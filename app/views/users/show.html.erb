@@ -1,4 +1,8 @@
 <h1> USERS SHOW PAGE </h1>
 
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %> <br><br>
+
 Currently Logged In As: <%= @user.username %> <br><br>
 User Email is: <%= @user.email %>

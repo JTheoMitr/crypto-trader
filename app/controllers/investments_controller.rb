@@ -17,7 +17,7 @@ class InvestmentsController < ApplicationController
 
     def index
       if params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
-        @investments = @cryptocoin.investments
+        @investments = @cryptocoin.investments.where(user: current_user)
       else
         @investments = current_user.investments
       end

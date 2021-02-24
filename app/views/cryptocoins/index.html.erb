@@ -1,5 +1,6 @@
 <h3> All Availabe Cryptocoin Types: </h3>
 
 <ul> <% @cryptocoins.each do |coin| %>
-<%= link_to(coin.name, cryptocoin_path(coin)) %> is currently at: <%= coin.dollar_value %> </br>
-<% end %></ul>
+<li> <%= link_to(coin.name, cryptocoin_path(coin)) %> is currently at: <%= coin.dollar_value %> </li>
+<% end %>
+</ul>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # HOME
+
+  get '/', to: 'cryptocoins#index'
+
   # LOGIN and LOGOUT Through Crypto Trader
 
   get '/login', to: 'sessions#new'

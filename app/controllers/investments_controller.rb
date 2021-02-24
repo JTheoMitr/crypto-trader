@@ -18,6 +18,8 @@ class InvestmentsController < ApplicationController
     def index
       if params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
         @investments = @cryptocoin.investments.where(user: current_user)
+      elsif !current_user
+        redirect_to '/login', alert: "Must Be Logged In to Perform Action"
       else
         @investments = current_user.investments
       end
@@ -48,7 +50,9 @@ private
   end
 
   def redirect_if_not_owner
-    if current_user != @investment.user
+    if !current_user
+      redirect_to '/login', alert: "Must Be Logged In to Perform Action"
+    elsif current_user != @investment.user
       redirect_to user_path(current_user), alert: "Unauthorized; No Access to Foreign Investments"
     end
   end

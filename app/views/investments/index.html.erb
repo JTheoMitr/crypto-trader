@@ -4,6 +4,6 @@
 
 <ul> <% @investments.each do |inv| %>
 $<%= inv.amount %> of <%= inv.cryptocoin.name %> 
-on <%= inv.created_at.strftime("%B %-d, %Y at %H:%M %p") %> yielding <%= (inv.amount / @cryptocoin.dollar_value) %> <%= @cryptocoin.name %>
-link_to("View Order", investment_path(inv)) </br>
+on <%= inv.readable_time %> yielding <%= (inv.amount / inv.cryptocoin.dollar_value) %> <%= inv.cryptocoin.name %>
+<%= link_to("View Order", investment_path(inv)) %>  </br>
 <% end %></ul>

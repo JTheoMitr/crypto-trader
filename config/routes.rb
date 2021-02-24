@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   resources :investments
   
   resources :cryptocoins, only: [:show, :index] do
-      resources :investments
+      resources :investments, only: [:index, :new, :create]
   end
 
   # OMNIAUTH
-  
+
   get '/auth/:provider/callback', to: 'sessions#omniauth'
   
 end

@@ -16,7 +16,11 @@ class InvestmentsController < ApplicationController
     end
 
     def index
-      @investments = current_user.investments
+      if params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
+        @investments = @cryptocoin.investments
+      else
+        @investments = current_user.investments
+      end
     end
 
     def show

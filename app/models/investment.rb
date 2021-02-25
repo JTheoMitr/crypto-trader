@@ -8,5 +8,9 @@ class Investment < ApplicationRecord
         self.created_at.strftime("%B %-d, %Y at %H:%M %p")
     end
 
+    def self.ordered_by_amount
+        self.order(amount: :desc)
+    end
+
     
 end

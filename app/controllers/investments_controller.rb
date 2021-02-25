@@ -17,11 +17,11 @@ class InvestmentsController < ApplicationController
 
     def index
       if params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
-        @investments = @cryptocoin.investments.where(user: current_user)
+        @investments = @cryptocoin.investments.where(user: current_user).ordered_by_amount
       elsif !current_user
         redirect_to '/login', alert: "Must Be Logged In to Perform Action"
       else
-        @investments = current_user.investments
+        @investments = current_user.investments.ordered_by_amount
       end
     end
 

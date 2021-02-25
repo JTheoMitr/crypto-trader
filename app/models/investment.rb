@@ -1,6 +1,8 @@
 class Investment < ApplicationRecord
     belongs_to :cryptocoin
     belongs_to :user
+    validates :amount, presence: true
+
 
     # accepts_nested_attributes_for :cryptocoin
 

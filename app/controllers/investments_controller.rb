@@ -1,9 +1,14 @@
 class InvestmentsController < ApplicationController
     before_action :set_investment, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
-
     def new
+      if !!current_user && params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
+        @investment = @cryptocoin.investments.build
+      elsif !current_user
+        redirect_to '/login', alert: "Must Be Logged In to Perform Action"
+      else
         @investment = Investment.new
+      end
     end    
 
     def create
@@ -11,7 +16,7 @@ class InvestmentsController < ApplicationController
         if @investment.save
           redirect_to investment_path(@investment)
         else
-          render :new
+          redirect_to new_investment_path, alert: "Amount Cannot be $0"
         end
     end
 

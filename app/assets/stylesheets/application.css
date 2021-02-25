@@ -28,12 +28,16 @@
  }
 
  body {
-     background-color: deepskyblue;
+     background-color: rgb(137, 140, 141);
  }
 
  a:visited {
      color: whitesmoke
  }
+
+ a {
+    color: whitesmoke
+}
 
 .header {
     display: flex;
@@ -85,4 +89,3 @@
     background-color: red;
     display: table;
     text-align: center;
-}

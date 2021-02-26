@@ -15,8 +15,10 @@ class InvestmentsController < ApplicationController
         @investment = current_user.investments.build(investment_params)
         if @investment.save
           redirect_to investment_path(@investment)
-        else
+        elsif !!params[:cryptocoin_id]
           redirect_to new_cryptocoin_investment_path(params[:cryptocoin_id]), alert: "Amount Cannot Be Zero"
+        else
+          redirect_to new_investment_path, alert: "Amount Cannot Be Zero"
         end
     end
 

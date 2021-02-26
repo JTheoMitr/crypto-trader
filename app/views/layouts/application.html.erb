@@ -11,6 +11,11 @@
   </head>
 
   <body>
+
+  <div class="logo">
+  <%= link_to(image_tag("cryptotraderlogo.png"), cryptocoins_path) %>
+  </div>
+  
   <div class="header">
   <%= button_to("Log In With Google", '/auth/google_oauth2') %>
   <%= link_to("Sign Up", '/signup') %>

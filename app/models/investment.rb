@@ -14,5 +14,9 @@ class Investment < ApplicationRecord
         self.order(amount: :desc)
     end
 
+    def crypto_yield
+        (self.amount / self.cryptocoin.dollar_value)
+    end
+
     
 end

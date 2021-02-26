@@ -1,3 +1,3 @@
 <h3> Your Investment: </h3>
 
-<%= @investment.amount %> of <%= @investment.cryptocoin.name %> on <%= @investment.created_at.strftime("%B %-d, %Y at %H:%M %p") %>
+$<%= @investment.amount %> worth of <%= @investment.cryptocoin.name %> on <%= @investment.readable_time %>

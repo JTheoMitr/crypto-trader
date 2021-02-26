@@ -1,6 +1,6 @@
-<%= form_for investment do |f| %>
+<%= form_for([@cryptocoin, @investment]) do |f| %>
+  <%= display_cryptocoin_fields(@cryptocoin, f) %>
     <%= f.label "Amount" %>
     <%= f.number_field :amount %>
-    <%= f.collection_select :cryptocoin_id, Cryptocoin.all, :id, :name %>
     <%= f.submit %>
   <% end %>

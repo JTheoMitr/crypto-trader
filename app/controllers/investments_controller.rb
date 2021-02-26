@@ -16,7 +16,7 @@ class InvestmentsController < ApplicationController
         if @investment.save
           redirect_to investment_path(@investment)
         else
-          redirect_to new_investment_path, alert: "Amount Cannot be $0"
+          render :new
         end
     end
 

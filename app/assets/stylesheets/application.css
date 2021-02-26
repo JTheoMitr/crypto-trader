@@ -42,8 +42,11 @@
  }
 
  body {
-     background-color: rgb(113, 132, 216);
+     background-color: rgb(102, 128, 243);
      text-align: center;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: medium;
+     color: whitesmoke;
  }
 
  a:visited {
@@ -115,6 +118,6 @@
  .field_with_errors {
         padding: 2px;
         background-color: red;
-        display: table;
+        display: inline-table;
         text-align: center;
  }

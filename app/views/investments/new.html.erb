@@ -1,3 +1,7 @@
 <%= display_cryptocoin_name(@cryptocoin) %>
 
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %> <br><br>
+
 <%= render 'form', investment: Investment.new %>

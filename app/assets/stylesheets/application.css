@@ -42,7 +42,7 @@
  }
 
  body {
-     background-color: rgb(137, 140, 141);
+     background-color: rgb(113, 132, 216);
      text-align: center;
  }
 
@@ -108,8 +108,7 @@
 
  .alert {
     padding: 2px;
-    background-color: red;
-    display: table;
+    color: rgb(73, 5, 5);
     text-align: center;
  }
 

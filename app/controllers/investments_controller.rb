@@ -42,12 +42,12 @@ class InvestmentsController < ApplicationController
 
     def update
       @investment.update(investment_params)
-      redirect_to investment_path(investment)
+      redirect_to investment_path(@investment)
     end
 
     def destroy
       @investment.destroy
-      redirect_to investments_path
+      redirect_to cryptocoin_investments_path(@investment.cryptocoin.id)
     end
 
 private

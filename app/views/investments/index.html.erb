@@ -2,8 +2,21 @@
 
 <%= display_header(@cryptocoin) %>
 
-<ul> <% @investments.each do |inv| %>
-$<%= inv.amount %> of <%= inv.cryptocoin.name %> 
-on <%= inv.readable_time %>; YIELD: <%= inv.crypto_yield %> <%= inv.cryptocoin.name %> <br>
-<%= link_to("View Order", investment_path(inv)) %>  </br>
-<% end %></ul>
+<table style="width:100%">
+  <tr>
+    <th>Cryptocoin Type</th>
+    <th>Amount Invested</th> 
+    <th>Time of Investment</th> 
+    <th>Yield</th>
+    <th>View Order</th>
+  </tr>
+
+  <% @investments.each do |inv| %>
+    <tr>
+    <td><%= link_to(inv.cryptocoin.name, cryptocoin_path(inv.cryptocoin.id)) %></td>
+    <td><%= inv.amount %></td>
+    <td><%= inv.readable_time %></td>
+    <td><%= inv.crypto_yield %></td>
+    <td><%= link_to("View Order", investment_path(inv)) %></td>
+  </tr>
+  <% end %>

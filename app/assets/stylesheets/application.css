@@ -144,3 +144,7 @@
         display: inline-table;
         text-align: center;
  }
+
+ .google_login {
+   background-image: "google_login.png";
+ }

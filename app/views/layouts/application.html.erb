@@ -18,7 +18,7 @@
   
   <div class="header">
   <% if !current_user %>
-  <%= button_to("Log In With Google", '/auth/google_oauth2') %> 
+  <%= link_to(image_tag("google_login.png", width: 150), '/auth/google_oauth2', method: :post) %>
   <%= link_to("Sign Up", '/signup') %>
   <%= link_to("Log In", '/login') %>
   <% elsif !!current_user %>

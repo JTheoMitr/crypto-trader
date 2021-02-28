@@ -17,10 +17,14 @@
   </div>
   
   <div class="header">
+  <% if !current_user %>
   <%= button_to("Log In With Google", '/auth/google_oauth2') %>
   <%= link_to("Sign Up", '/signup') %>
   <%= link_to("Log In", '/login') %>
+  <% elsif !!current_user %>
+  <%= link_to("Wallet", investments_path) %>
   <%= link_to("Log Out", '/logout', method: 'delete') %>
+  <% end %>
   </div>
 
   <br>

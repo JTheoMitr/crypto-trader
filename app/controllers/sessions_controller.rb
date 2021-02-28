@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
         if user.valid?
             session[:user_id] = user.id
-            redirect_to new_investment_path
+            redirect_to cryptocoins_path
         else
             flash[:message] = user.errors.full_messages.join("")
             redirect_to investments_path

@@ -108,6 +108,29 @@
     }
   }
 
+  #investments {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #investments td, #investments th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #investments tr:nth-child(even){background-color: #544caa;}
+  
+  #investments tr:hover {background-color: rgb(78, 76, 76);}
+  
+  #investments th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: deepskyblue;
+    color: white;
+  }
+
 
  .alert {
     padding: 2px;

@@ -148,3 +148,8 @@
  .google_login {
    background-image: "google_login.png";
  }
+
+ .footer {
+   margin-top: 180px;
+   margin-bottom: 2px;
+ }

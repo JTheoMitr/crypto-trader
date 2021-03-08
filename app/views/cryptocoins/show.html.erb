@@ -1,6 +1,6 @@
 <h1> <%= @cryptocoin.name %> </h1>
 <p> <%= @cryptocoin.description %> </p>
 
-<%= link_to("Wallet", cryptocoin_investments_path(@cryptocoin)) %>
+<%= link_to("Wallet", cryptocoin_investments_path(@cryptocoin)) %>...
 
 <%= link_to("Invest in #{@cryptocoin.name}", new_cryptocoin_investment_path(@cryptocoin.id)) %>

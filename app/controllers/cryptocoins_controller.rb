@@ -7,4 +7,8 @@ class CryptocoinsController < ApplicationController
     def show
         @cryptocoin = Cryptocoin.find_by(id: params[:id])
     end
+
+    def alphabetize
+        @cryptocoins = Cryptocoin.all.alphabetize
+    end
 end

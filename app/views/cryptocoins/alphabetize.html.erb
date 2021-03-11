@@ -1,0 +1,4 @@
+<ul> <% @cryptocoins.each do |coin| %>
+    <li> <%= link_to(coin.name, cryptocoin_path(coin)) %> is currently at: $<%= coin.dollar_value %> per coin </li><br>
+    <% end %>
+    </ul>

@@ -1,5 +1,17 @@
 <%= display_cryptocoin_name(@cryptocoin) %>
 
+<% if @investment.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@investment.errors.count, "error") %> prohibited this investment from being saved:</h3>
+
+    <ul>
+      <% @investment.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <% if flash[:alert] %>
     <div class="alert"><%= flash[:alert] %></div>
 <% end %> <br><br>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
+  get '/cryptocoins/alphabetize_by_name', to: 'cryptocoins#alphabetize'
 
   # Resources for Investments and Crypto
 

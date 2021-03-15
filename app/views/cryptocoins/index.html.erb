@@ -1,5 +1,11 @@
 <h3> All Availabe Cryptocoin Types: </h3>
 
+<%= form_tag cryptocoins_path, :method => "get" do %>
+    <%= label_tag(:search, "Search for Crypto Type:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search", :name => nil) %>
+    <% end %>
+
 <ul> <% @cryptocoins.each do |coin| %>
 <li> <%= link_to(coin.name, cryptocoin_path(coin)) %> is currently at: $<%= coin.dollar_value %> per coin </li><br>
 <% end %>

@@ -1,7 +1,7 @@
 class CryptocoinsController < ApplicationController
 
     def index
-        @cryptocoins = Cryptocoin.all
+        @cryptocoins = Cryptocoin.search(params[:search])
     end
 
     def show
@@ -11,4 +11,5 @@ class CryptocoinsController < ApplicationController
     def alphabetize
         @cryptocoins = Cryptocoin.all.alphabetize
     end
+
 end

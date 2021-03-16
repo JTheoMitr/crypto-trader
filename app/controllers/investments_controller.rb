@@ -49,6 +49,7 @@ class InvestmentsController < ApplicationController
 
     def destroy
       @investment.destroy
+      current_user.update(wallet: (current_user.wallet + @investment.amount))
       redirect_to cryptocoin_investments_path(@investment.cryptocoin.id)
     end
 

@@ -10,9 +10,9 @@ User.destroy_all
 Cryptocoin.destroy_all
 Investment.destroy_all
 
-j = User.create({ username: 'john', email: 'john@gmail.com', password: 'john'})
-a = User.create({ username: 'annie', email: 'annie@gmail.com', password: 'annie'})
-m = User.create({ username: 'mike', email: 'mike@gmail.com', password: 'mike'})
+j = User.create({ username: 'john', email: 'john@gmail.com', password: 'john', wallet: 5000})
+a = User.create({ username: 'annie', email: 'annie@gmail.com', password: 'annie', wallet: 5000})
+m = User.create({ username: 'mike', email: 'mike@gmail.com', password: 'mike', wallet: 5000})
 
 btc = Cryptocoin.create(name: 'Bitcoin', dollar_value: 52383.79, description: 'Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.  Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services.')
 graph = Cryptocoin.create(name: 'The Graph', dollar_value: 2.25, description: 'The Graph is an indexing protocol for querying data for networks like Ethereum and IPFS, powering many applications in both DeFi and the broader Web3 ecosystem. Anyone can build and publish open APIs, called subgraphs, that applications can query using GraphQL to retrieve blockchain data. There is a hosted service in production that makes it easy for developers to get started building on The Graph and the decentralized network will be launching later this year. The Graph currently supports indexing data from Ethereum, IPFS and POA, with more networks coming soon.')

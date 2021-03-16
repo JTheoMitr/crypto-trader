@@ -2,7 +2,9 @@
 
 $<%= @investment.amount %> worth of 
 <%= @investment.cryptocoin.name %> on 
-<%= @investment.readable_time %> ...
+<%= @investment.readable_time %> ... <br>
+
+New Wallet: <%= current_user.wallet %>
 
  <%= link_to "Adjust", edit_investment_path(@investment) %> ...
  <%= link_to "Sell", investment_path(@investment), method: 'delete' %>

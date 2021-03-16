@@ -1,6 +1,7 @@
 class InvestmentsController < ApplicationController
     before_action :set_investment, :redirect_if_not_owner, only: [:show, :edit, :update, :destroy]
 
+
     def new
       if !!current_user && params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
         @investment = @cryptocoin.investments.build
@@ -14,7 +15,10 @@ class InvestmentsController < ApplicationController
     def create
         @investment = current_user.investments.build(investment_params)
         if @investment.save
+          
+          current_user.update(wallet: (current_user.wallet - @investment.amount))
           redirect_to investment_path(@investment)
+          
         else
           render :new
         end

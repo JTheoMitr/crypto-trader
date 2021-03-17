@@ -7,5 +7,5 @@ $<%= @investment.amount %> worth of
 New Wallet: <%= current_user.wallet %>
 
  <%= link_to "Adjust", edit_investment_path(@investment) %> ...
- <%= link_to "Sell", investment_path(@investment), method: 'delete' %>
+ <%= link_to "Sell", investment_path(@investment), method: 'delete', data: { confirm: "Are you sure?" } %>
 

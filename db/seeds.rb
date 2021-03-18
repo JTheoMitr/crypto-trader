@@ -21,11 +21,6 @@ stellar = Cryptocoin.create(name: 'Stellar Lumens', dollar_value: 0.5, descripti
 ethereum = Cryptocoin.create(name: 'Ethereum', dollar_value: 1389.25, description: 'Ethereum is a decentralized, open-source blockchain featuring smart contract functionality. Ether (ETH) is the native cryptocurrency of the platform. It is the second-largest cryptocurrency by market capitalization, after Bitcoin.  Ethereum is the most actively used blockchain.')
 cardano = Cryptocoin.create(name: 'Cardano', dollar_value: 1.27, description: 'Cardano is a cryptocurrency network and open source project that aims to run a public blockchain platform for smart contracts.  The Cardano internal cryptocurrency is called Ada.  The development of the project is overseen and supervised by the Cardano Foundation based in Zug, Switzerland.')
 
-j.investments.create(amount: 550, cryptocoin: btc)
-j.investments.create(amount: 300, cryptocoin: stellar)
-j.investments.create(amount: 700, cryptocoin: graph)
-j.investments.create(amount: 250, cryptocoin: btc)
-j.investments.create(amount: 800, cryptocoin: compound)
 
 a.investments.create(amount: 975, cryptocoin: btc)
 a.investments.create(amount: 200, cryptocoin: compound)

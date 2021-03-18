@@ -17,6 +17,7 @@ class InvestmentsController < ApplicationController
         if @investment.save
           
           current_user.update(wallet: (current_user.wallet - @investment.amount))
+          @investment.update(yield: @investment.crypto_yield)
           redirect_to investment_path(@investment)
           
         else
@@ -48,7 +49,6 @@ class InvestmentsController < ApplicationController
     end
 
     def destroy
-      
       @investment.destroy
       current_user.update(wallet: (current_user.wallet + @investment.amount))
       redirect_to cryptocoin_investments_path(@investment.cryptocoin.id)
@@ -57,7 +57,7 @@ class InvestmentsController < ApplicationController
 private
 
   def investment_params
-    params.require(:investment).permit(:amount, :cryptocoin_id, cryptocoin_attributes: [:name])
+    params.require(:investment).permit(:amount, :yield, :cryptocoin_id, cryptocoin_attributes: [:name])
   end
 
   def redirect_if_not_owner

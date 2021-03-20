@@ -14,7 +14,9 @@ class InvestmentsController < ApplicationController
 
     def create
         @investment = current_user.investments.build(investment_params)
-        if @investment.save
+        if (@investment.amount > current_user.wallet)
+          redirect_to new_investment_path, alert: "Insufficient Balance"
+        elsif @investment.save
           
           current_user.update(wallet: (current_user.wallet - @investment.amount))
           @investment.update(yield: @investment.crypto_yield)

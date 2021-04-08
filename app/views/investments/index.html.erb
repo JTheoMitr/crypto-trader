@@ -18,3 +18,5 @@
     <td><%= link_to("EDIT", investment_path(inv)) %></td>
   </tr>
   <% end %>
+
+  <%= link_to "Sell All", [:destroy_all, :investments], method: :delete, data: { confirm: "Are you sure?" } %>

@@ -6,3 +6,5 @@
 <%= link_to("Invest in #{@cryptocoin.name}", new_cryptocoin_investment_path(@cryptocoin.id)) %>
 
 You own a total of <%= @cryptocoin.investments.where(user: current_user).sum(:yield) %>
+
+

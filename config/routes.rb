@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :withdrawals
   # HOME
 
   get '/', to: 'cryptocoins#index'
@@ -15,16 +16,23 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   get '/cryptocoins/alphabetize_by_name', to: 'cryptocoins#alphabetize'
 
+
   # Resources for Investments and Crypto
 
-  resources :investments
+  resources :investments do
+    collection do
+      delete :destroy_all
+    end
+  end
   
   resources :cryptocoins, only: [:show, :index] do
       resources :investments, only: [:index, :new, :create]
+      resources :withdrawals, only: [:index, :new, :create]
   end
 
   # OMNIAUTH
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
+
   
 end

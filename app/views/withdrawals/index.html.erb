@@ -1,0 +1,20 @@
+<%= display_header(@cryptocoin) %>
+
+<table id="withdrawals">
+  <tr>
+    <th>Cryptocoin Type</th>
+    <th>Withdrawal Amount</th> 
+    <th>Time of Withdrawal</th> 
+    <th>Yield</th>
+    <th>View Order</th>
+  </tr>
+
+  <% @withdrawals.each do |w| %>
+    <tr>
+    <td><%= link_to(w.cryptocoin.name, cryptocoin_path(w.cryptocoin.id)) %></td>
+    <td><%= w.amount %></td>
+    <td><%= w.readable_time %></td>
+    <td><%= w.crypto_yield %></td>
+    <td><%= link_to("EDIT", withdrawal_path(w)) %></td>
+  </tr>
+  <% end %>

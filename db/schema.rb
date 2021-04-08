@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_082201) do
+ActiveRecord::Schema.define(version: 2021_04_08_081154) do
 
   create_table "cryptocoins", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2021_03_18_082201) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "wallet"
+  end
+
+  create_table "withdrawals", force: :cascade do |t|
+    t.decimal "amount"
+    t.integer "user_id"
+    t.integer "cryptocoin_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "yield"
+    t.index ["cryptocoin_id"], name: "index_withdrawals_on_cryptocoin_id"
+    t.index ["user_id"], name: "index_withdrawals_on_user_id"
   end
 
 end

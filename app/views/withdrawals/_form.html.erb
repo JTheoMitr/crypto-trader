@@ -1,0 +1,6 @@
+<%= form_for([@cryptocoin, @withdrawal]) do |f| %>
+    <%= display_cryptocoin_fields(@cryptocoin, f) %>
+      <%= f.label "Amount" %>
+      <%= f.number_field :amount %>
+      <%= f.submit %>
+    <% end %>

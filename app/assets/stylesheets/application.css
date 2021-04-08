@@ -42,7 +42,7 @@
  }
 
  body {
-     background-color: rgb(102, 128, 243);
+     background-color: rgb(40, 50, 94);
      text-align: center;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      font-size: medium;
@@ -60,7 +60,7 @@
 .logo {
   display: inline-block;
   text-align: center;
-  background: deepskyblue;
+  background: rgb(23, 25, 46);
   width: 100%;
 }
 
@@ -71,7 +71,7 @@
     
     list-style: none;
     margin: 0; 
-    background: deepskyblue;
+    background: rgb(23, 20, 46);
   }
   
   .header a {

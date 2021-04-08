@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_many :investments
+    has_many :withdrawals
     has_many :cryptocoins, through: :investments
+    has_many :cryptocoins, through: :withdrawals
 
     has_secure_password
 

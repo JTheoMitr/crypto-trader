@@ -1,6 +1,8 @@
 class Cryptocoin < ApplicationRecord
     has_many :investments
+    has_many :withdrawals
     has_many :users, through: :investments
+    has_many :users, through: :withdrawals
 
 
     def self.alphabetize

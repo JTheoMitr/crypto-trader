@@ -56,6 +56,19 @@ class InvestmentsController < ApplicationController
       redirect_to cryptocoin_investments_path(@investment.cryptocoin.id)
     end
 
+    def destroy_all
+      if params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
+        @investments = @cryptocoin.investments.where(user: current_user)
+      else
+        @investments = Investment.all
+      end
+        current_user.update(wallet: (current_user.wallet + @investments.sum(:amount)))
+        @investments.destroy_all
+        redirect_to new_investment_path
+    end
+
+  
+
 private
 
   def investment_params

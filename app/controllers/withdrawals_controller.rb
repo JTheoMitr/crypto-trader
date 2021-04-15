@@ -13,7 +13,7 @@ class WithdrawalsController < ApplicationController
 
     def create
         @withdrawal = current_user.withdrawals.build(withdrawal_params)
-        if (@withdrawal.amount > current_user.wallet) 
+        if (@withdrawal.amount > @withdrawal.cryptocoin.investments.sum(:amount)) 
           redirect_to new_withdrawal_path, alert: "Insufficient Yield"
         elsif @withdrawal.save
           

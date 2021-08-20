@@ -1,5 +1,9 @@
 <%= display_header(@cryptocoin) %>
 
+Total Holdings (in USD): $<strong><%= show_full_balance(@cryptocoins) %></strong>
+
+<br></br>
+
 <table id="investments">
   <tr>
     <th>Cryptocoin Type</th>
@@ -16,11 +20,11 @@
     <td><%= inv.readable_time %></td>
     <td><%= inv.crypto_yield %></td>
     <td><%= link_to("VIEW", investment_path(inv)) %></td>
-    <% end %>
+   
   </tr>
+  <% end %>
+  </table>
 
   <br></br>
 
   <%= link_to "Sell All", [:destroy_all, :investments], method: :delete, data: { confirm: "Are you sure?" } %>
-
-  Total Holdings: $<%= show_full_balance(@cryptocoins) %>

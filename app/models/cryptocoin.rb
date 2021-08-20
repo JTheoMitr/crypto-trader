@@ -11,15 +11,17 @@ class Cryptocoin < ApplicationRecord
 
     def self.search(search)
         if search
-            crypto_type = Cryptocoin.find_by(name: search.capitalize)
+            crypto_type = Cryptocoin.find_by(name: search.downcase)
             if crypto_type
                 self.where(id: crypto_type)
             else
-                @cryptocoins = Cryptocoin.all
+                @searched_coins = Cryptocoin.all
             end
         else
-            @cryptocoins = Cryptocoin.all
+            @searched_coins = Cryptocoin.all
         end
     end
+    
 
+    
 end

@@ -1,10 +1,11 @@
-<h1> <%= @cryptocoin.name %> </h1>
+<h1> <%= @cryptocoin.name.capitalize %> </h1>
 <p> <%= @cryptocoin.description %> </p>
+<p> <%= @cryptocoin.dollar_value %> </p>
 
 <%= link_to("Wallet", cryptocoin_investments_path(@cryptocoin)) %>...
 
 <%= link_to("Invest in #{@cryptocoin.name}", new_cryptocoin_investment_path(@cryptocoin.id)) %>
 
-You own a total of <%= @cryptocoin.investments.where(user: current_user).sum(:yield) %>
+You own a total of <%= @cryptocoin.investments.where(user: current_user).sum(:yield) - @cryptocoin.withdrawals.where(user: current_user).sum(:yield) %>
 
 

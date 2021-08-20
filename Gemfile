@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 
+gem 'excon'
+# gem 'coinmarketcap'
+
 # OmniAuth Stuff
 
 gem 'dotenv-rails'

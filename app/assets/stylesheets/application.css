@@ -45,7 +45,7 @@
      background-color: rgb(40, 50, 94);
      text-align: center;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     font-size: medium;
+     font-size: large;
      color: whitesmoke;
  }
 
@@ -83,6 +83,32 @@
   
   .header a:hover {
     background: #1565C0;
+  }
+
+  .list {
+    color: wheat;
+  }
+
+  .list a {
+    font-size: x-large;
+  }
+
+  .list a:hover {
+    background: #1565C0;
+    border-radius: 10%;
+  }
+
+  .price {
+    color: white;
+    font-size: x-large
+  }
+
+  .green {
+    color: greenyellow
+  }
+
+  .red {
+    color: red;
   }
   
   @media all and (max-width: 800px) {

@@ -1,11 +1,11 @@
 <h3> Your Investment: </h3>
 
-$<%= @investment.amount %> of 
-<%= @investment.cryptocoin.name %> for <%= @investment.crypto_yield %> filled on 
+$<%= @investment.amount %> for 
+<%= @investment.crypto_yield.round(5) %> of <%= @investment.cryptocoin.name.capitalize %>: Order filled on 
 <%= @investment.readable_time %> <br></br>
 
 
 
- <%= link_to "Adjust", edit_investment_path(@investment) %> ......
- <%= link_to "Sell", investment_path(@investment), method: 'delete', data: { confirm: "Are you sure?" } %>
+#  <%= link_to "Adjust", edit_investment_path(@investment) %> ......
+#  <%= link_to "Sell", investment_path(@investment), method: 'delete', data: { confirm: "Are you sure?" } %>
 

@@ -1,4 +1,5 @@
 class WithdrawalsController < ApplicationController
+  include WithdrawalsHelper
     before_action :set_withdrawal, only: [:show, :edit, :update, :destroy]
 
     def new
@@ -13,7 +14,11 @@ class WithdrawalsController < ApplicationController
 
     def create
         @withdrawal = current_user.withdrawals.build(withdrawal_params)
-        if (@withdrawal.amount > @withdrawal.cryptocoin.investments.sum(:amount)) 
+          coin_details = find_dollarvalue(@withdrawal.cryptocoin.abv)
+          new_price = coin_details["Realtime Currency Exchange Rate"]["8. Bid Price"]
+          @withdrawal.cryptocoin.update(dollar_value: new_price)
+        if (@withdrawal.amount > (@withdrawal.cryptocoin.investments.where(user: current_user).sum(:yield) * @withdrawal.cryptocoin.dollar_value) - (@withdrawal.cryptocoin.withdrawals.where(user: current_user).sum(:yield) * @withdrawal.cryptocoin.dollar_value)) 
+          
           redirect_to new_withdrawal_path, alert: "Insufficient Yield"
         elsif @withdrawal.save
           
@@ -49,5 +54,11 @@ class WithdrawalsController < ApplicationController
   def set_withdrawal
     @withdrawal = Withdrawal.find(params[:id])
   end
+
+  def find_dollarvalue(name)
+    request_api(
+      "https://alpha-vantage.p.rapidapi.com/query?from_currency=#{URI.encode(name)}&function=CURRENCY_EXCHANGE_RATE&to_currency=USD"
+    )
+end
 
 end

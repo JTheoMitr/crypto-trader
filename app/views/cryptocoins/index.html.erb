@@ -5,8 +5,24 @@
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag("Search", :name => nil) %>
     <% end %>
+    <br></br>
+   Invest in... <%= link_to(@searched_coins[0].name.capitalize, cryptocoin_path(@searched_coins[0])) %>
+    <br></br>
 
-<ul> <% @cryptocoins.each do |coin| %>
-<li> <%= link_to(coin.name, cryptocoin_path(coin)) %> is currently at: $<%= coin.dollar_value %> per coin </li><br>
-<% end %>
-</ul>
+    <% if flash[:alert] %>
+    <div class="green"><%= flash[:alert] %></div>
+    <% end %> <br><br>
+
+<ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
+    <li> <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %> <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> is currently trading at: <span class="price"><%= @coins["data"]["coins"][index]["price"] %></span>
+    <% if @coins["data"]["coins"][index]["change"] > 0 %>
+    <span class="green"> +<%= @coins["data"]["coins"][index]["change"] %></span>
+    <% elsif @coins["data"]["coins"][index]["change"] < 0 %>
+    <span class="red"><%= @coins["data"]["coins"][index]["change"] %></span>
+    <% end %>
+    </li>
+    <br>
+    <% end %>
+    
+
+    </ul>

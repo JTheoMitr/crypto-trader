@@ -40,7 +40,10 @@ class InvestmentsController < ApplicationController
         redirect_to '/login', alert: "Must Be Logged In to Perform Action"
       else
         @investments = current_user.investments.ordered_by_amount
-        @cryptocoins = Cryptocoin.all
+        coinlist = get_coins()
+        @cryptocoins = Cryptocoin.all.each_with_index do | coin, index |
+          coin.update(dollar_value: coinlist["data"]["coins"][index]["price"])
+        end
       end
     end
 
@@ -98,6 +101,12 @@ private
     request_api(
       "https://alpha-vantage.p.rapidapi.com/query?from_currency=#{URI.encode(name)}&function=CURRENCY_EXCHANGE_RATE&to_currency=USD"
     )
-end
+  end
+
+  def get_coins()
+    request_api(
+        "https://coinranking1.p.rapidapi.com/coins"
+    )
+  end
 
 end

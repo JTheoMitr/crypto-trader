@@ -5,7 +5,11 @@ $<%= @investment.amount %> for
 <%= @investment.readable_time %> <br></br>
 
 
+<% if false %>
 
-#  <%= link_to "Adjust", edit_investment_path(@investment) %> ......
-#  <%= link_to "Sell", investment_path(@investment), method: 'delete', data: { confirm: "Are you sure?" } %>
+using an 'if false' block to comment out edit and delete links
 
+<%= link_to "Adjust", edit_investment_path(@investment) %> ......
+<%= link_to "Sell", investment_path(@investment), method: 'delete', data: { confirm: "Are you sure?" } %>
+
+<% end %>

@@ -40,6 +40,7 @@ class InvestmentsController < ApplicationController
         redirect_to '/login', alert: "Must Be Logged In to Perform Action"
       else
         @investments = current_user.investments.ordered_by_amount
+        @cryptocoins = Cryptocoin.all
       end
     end
 

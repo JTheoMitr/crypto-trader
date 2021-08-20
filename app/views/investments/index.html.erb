@@ -20,3 +20,5 @@
   <% end %>
 
   <%= link_to "Sell All", [:destroy_all, :investments], method: :delete, data: { confirm: "Are you sure?" } %>
+
+  <%= show_full_balance(@cryptocoins) %>

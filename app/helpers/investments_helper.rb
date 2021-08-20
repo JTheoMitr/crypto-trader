@@ -24,6 +24,14 @@ module InvestmentsHelper
         end
     end
 
+    def show_full_balance(cryptocoins)
+        investment_balance = []
+        cryptocoins.each do |coin|
+            investment_balance << ((coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) * coin.dollar_value).to_f.round(2)
+        end
+        return investment_balance
+    end
+
     private
 
     def request_api(url)

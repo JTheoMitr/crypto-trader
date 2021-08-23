@@ -1,6 +1,10 @@
-<%= display_header(@cryptocoin) %>
+<div class="balance_box">
+<h5>Current Holdings (in USD): $<strong><%= show_full_balance(@cryptocoins) %></strong></h5>
+<h5>Wallet: <strong><%= number_to_currency(current_user.wallet) %></strong></h5>
+<h4>Total Funds: <strong><%= number_to_currency(show_full_balance(@cryptocoins) + current_user.wallet) %></strong></h4>
+</div>
 
-Total Holdings (in USD): $<strong><%= show_full_balance(@cryptocoins) %></strong>
+<%= display_header(@cryptocoin) %>
 
 <br></br>
 

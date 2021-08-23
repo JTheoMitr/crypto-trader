@@ -21,6 +21,10 @@ class Cryptocoin < ApplicationRecord
             @searched_coins = Cryptocoin.all
         end
     end
+
+    def name_for_select
+        name.capitalize
+    end
     
 
     

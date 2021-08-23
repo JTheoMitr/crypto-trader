@@ -68,7 +68,7 @@
   border-style: ridge;
   border-color: whitesmoke;
   background-color: #1565C0;
-  width: fit-content;
+  max-width: 30%;
   height: fit-content;
   padding-right: 10px;
   padding-left: 10px;
@@ -87,7 +87,7 @@
 
 .logo_box {
   position: relative;
-  left: -20%;
+  left: -18%;
   width: 35%;
   height: 35%;
   background: #1565C0;

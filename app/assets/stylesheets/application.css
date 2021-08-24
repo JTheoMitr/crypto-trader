@@ -64,16 +64,17 @@
 }
 
 .balance_box {
-  text-align: left;
+  text-align: center;
   border-style: ridge;
   border-color: whitesmoke;
   background-color: #1565C0;
   max-width: 30%;
   height: fit-content;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 5px;
   
+}
+
+.balance_box_container {
+  text-align: center;
 }
 
 .logo {

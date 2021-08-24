@@ -1,13 +1,22 @@
-<div class="balance_box">
-<%= image_tag "wallet2.png", style: 'height:8%;width:8%;background-color:grey;border-radius:20%;' %> Wallet
-<h5>Current Holdings (in USD): $<strong><%= show_full_balance(@cryptocoins) %></strong></h5>
-<h5>Wallet: <strong><%= number_to_currency(current_user.wallet) %></strong></h5>
-<h4>Total Funds: <strong><%= number_to_currency(show_full_balance(@cryptocoins) + current_user.wallet) %></strong></h4>
+<div class="balance_box_container">
+<div>
+<%= image_tag "wallet_logo_no_border.png", style: 'height:15%;width:15%' %>
+<h4>Total Funds: <strong><%= number_to_currency(show_full_balance(@cryptocoins) + current_user.wallet) %></h4>
+<p style="padding-bottom:4%;">USD Available: <%= number_to_currency(current_user.wallet) %></p>
+
+</div>
 </div>
 
 <%= display_header(@cryptocoin) %>
 
-<br></br>
+<br>
+<div>
+<% @cryptocoins.each do |coin| %>
+  <% if (coin.investments.where(user: current_user).sum(:yield)) > 0 %>
+  <%= coin.investments.where(user: current_user).sum(:yield) %>
+  <% end %>
+  <% end %>
+  </div>
 
 <table id="investments">
   <tr>

@@ -17,14 +17,14 @@
 
  h3 {
     font-size: 30px;
-    line-height: 54px;
+    
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   h2 {
     font-size: 40px;
-    line-height: 54px;
+   
     text-align: center;
     text-decoration: underline;
   }
@@ -88,7 +88,7 @@
 
 .logo_box {
   position: relative;
-  left: -18%;
+  left: -25%;
   width: 35%;
   height: 35%;
   background: #1565C0;

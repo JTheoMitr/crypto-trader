@@ -2,21 +2,20 @@
 <div>
 <%= image_tag "wallet_logo_no_border.png", style: 'height:15%;width:15%' %>
 <h4>Total Funds: <strong><%= number_to_currency(show_full_balance(@cryptocoins) + current_user.wallet) %></h4>
-<p style="padding-bottom:4%;">USD Available: <%= number_to_currency(current_user.wallet) %></p>
+<%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;' %>
 
 </div>
 </div>
 
-<%= display_header(@cryptocoin) %>
+<h2> Portfolio: </h2>
 
-<br>
-<div>
+<ul>
 <% @cryptocoins.each do |coin| %>
   <% if (coin.investments.where(user: current_user).sum(:yield)) > 0 %>
-  <%= coin.investments.where(user: current_user).sum(:yield) %>
+  <li><h3><strong><%= coin.name.capitalize %></strong>: <%= coin.investments.where(user: current_user).sum(:yield).round(5) %></h3></li>
   <% end %>
   <% end %>
-  </div>
+  </ul>
 
 <table id="investments">
   <tr>

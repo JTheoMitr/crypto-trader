@@ -10,7 +10,7 @@ module InvestmentsHelper
 
     def display_cryptocoin_name(cryptocoin)
         if cryptocoin
-            tag.h1( "Invest in #{cryptocoin.name}")
+            tag.h1( "Invest in #{cryptocoin.name.capitalize}")
         else
             tag.h2("New Investment")
         end

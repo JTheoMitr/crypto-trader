@@ -15,34 +15,12 @@
   <li><h3><%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %>
   <strong><%= coin.name.capitalize %></strong>: <%= (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)).round(5) %> for 
   <span style="color:lightgreen;">$<%= ((coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) * coin.dollar_value).to_f.round(2) %></span>
-  
   </h3></li>
   _
   <% end %>
   <% end %>
   </ul>
 
-<table id="investments">
-  <tr>
-    <th>Cryptocoin Type</th>
-    <th>Amount Invested</th> 
-    <th>Time of Investment</th> 
-    <th>Yield</th>
-    <th>View Order</th>
-  </tr>
-
-  <% @investments.each do |inv| %>
-    <tr>
-    <td><%= link_to(inv.cryptocoin.name, cryptocoin_path(inv.cryptocoin.id)) %></td>
-    <td><%= inv.amount %></td>
-    <td><%= inv.readable_time %></td>
-    <td><%= inv.yield %></td>
-    <td><%= link_to("VIEW", investment_path(inv)) %></td>
-   
-  </tr>
-  <% end %>
-  </table>
-
-  <br></br>
-
+  <% if false %>
   <%= link_to "Sell All", [:destroy_all, :investments], method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>

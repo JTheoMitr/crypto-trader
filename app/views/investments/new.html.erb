@@ -17,3 +17,28 @@
 <% end %> <br><br>
 
 <%= render 'form' %>
+
+<br></br>
+
+<h3> All Previous Investments </h3>
+
+<table id="investments">
+  <tr>
+    <th>Cryptocoin Type</th>
+    <th>Amount Invested</th> 
+    <th>Time of Investment</th> 
+    <th>Yield</th>
+    <th>View Order</th>
+  </tr>
+
+  <% @investments_past.each do |inv| %>
+    <tr>
+    <td><%= link_to(inv.cryptocoin.name.capitalize, cryptocoin_path(inv.cryptocoin.id)) %></td>
+    <td><%= inv.amount %></td>
+    <td><%= inv.readable_time %></td>
+    <td><%= inv.yield %></td>
+    <td><%= link_to("VIEW", investment_path(inv)) %></td>
+   
+  </tr>
+  <% end %>
+  </table>

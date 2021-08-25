@@ -6,10 +6,12 @@ class InvestmentsController < ApplicationController
     def new
       if !!current_user && params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
         @investment = @cryptocoin.investments.build
+        @investments_past = @cryptocoin.investments.where(user: current_user)
       elsif !current_user
         redirect_to '/login', alert: "Must Be Logged In to Perform Action"
       else
         @investment = Investment.new
+        @investments_past = current_user.investments
       end
     end    
 

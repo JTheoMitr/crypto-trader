@@ -48,7 +48,7 @@
  }
 
  body {
-     background-color: rgb(40, 50, 94);
+     background-color: rgb(22, 22, 24);
      text-align: center;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      font-size: large;
@@ -64,17 +64,20 @@
 }
 
 .balance_box {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
   border-style: ridge;
   border-color: whitesmoke;
   background-color: #1565C0;
   max-width: 30%;
   height: fit-content;
+  padding: 1%;
   
 }
 
 .balance_box_container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
@@ -111,7 +114,7 @@
     list-style: none;
     margin-top: 0;
     margin: 0; 
-    background: rgb(23, 20, 46);
+    background: rgb(22, 24, 54);
   }
   
   .header a {

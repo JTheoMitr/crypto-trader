@@ -1,8 +1,8 @@
 <div class="balance_box_container">
-<div>
+<div class="balance_box">
 <%= image_tag "wallet_logo_no_border.png", style: 'height:15%;width:15%' %>
-<h4>Total Funds: <strong><%= number_to_currency(show_full_balance(@cryptocoins) + current_user.wallet) %></h4>
-<%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;' %>
+
+<p><%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;' %></p>
 
 </div>
 </div>
@@ -11,8 +11,13 @@
 
 <ul>
 <% @cryptocoins.each do |coin| %>
-  <% if (coin.investments.where(user: current_user).sum(:yield)) > 0 %>
-  <li><h3><%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %><strong><%= coin.name.capitalize %></strong>: <%= coin.investments.where(user: current_user).sum(:yield).round(5) %></h3></li>
+  <% if (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) > 0 %>
+  <li><h3><%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %>
+  <strong><%= coin.name.capitalize %></strong>: <%= (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)).round(5) %> for 
+  <span style="color:lightgreen;">$<%= ((coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) * coin.dollar_value).to_f.round(2) %></span>
+  
+  </h3></li>
+  _
   <% end %>
   <% end %>
   </ul>

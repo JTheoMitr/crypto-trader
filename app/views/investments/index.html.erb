@@ -1,10 +1,17 @@
 <div class="balance_box_container">
 <div class="balance_box">
-<%= image_tag "wallet_logo_no_border.png", style: 'height:15%;width:15%' %>
+<%= image_tag "pixel_cash_one.png", style: 'height:15%;width:15%' %>
 
 <p><%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;' %></p>
 
 </div>
+<div class="balance_box">
+<%= image_tag "pixel_cash_one.png", style: 'height:15%;width:15%' %>
+
+<p><%= link_to "Total Funds: #{number_to_currency(current_user.wallet + show_full_balance(@cryptocoins))}", investments_path, style: 'color:yellow;' %></p>
+
+</div>
+
 </div>
 
 <h2> Portfolio: </h2>

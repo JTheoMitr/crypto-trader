@@ -48,7 +48,9 @@
  }
 
  body {
-     background-color: rgb(22, 22, 24);
+     background-image: url("honeycomb_2_full.png");
+     background-size: 100%;
+     background-repeat: repeat-y;
      text-align: center;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      font-size: large;
@@ -68,7 +70,35 @@
   justify-content: space-evenly;
   border-style: ridge;
   border-color: whitesmoke;
-  background-color: #1565C0;
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  
+  max-width: 30%;
+  height: fit-content;
+  padding: 1%;
+  
+}
+
+.portfolio {
+  margin: auto;
+  border-style: ridge;
+  border-color: whitesmoke;
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  
+  max-width: 80%;
+  height: fit-content;
+  padding: 1%;
+  
+}
+
+.search_box {
+  margin: auto;
+  border-style: ridge;
+  border-color: whitesmoke;
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  
   max-width: 30%;
   height: fit-content;
   padding: 1%;
@@ -131,6 +161,7 @@
 
   .list {
     color: wheat;
+    list-style-type: none;
   }
 
   .list a {

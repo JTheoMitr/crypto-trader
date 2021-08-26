@@ -6,14 +6,15 @@
 
 </div>
 <div class="balance_box">
-<%= image_tag "pixel_cash_one.png", style: 'height:15%;width:15%' %>
+<%= image_tag "pixel_coin_stack.png", style: 'height:15%;width:15%' %>
 
 <p><%= link_to "Total Funds: #{number_to_currency(current_user.wallet + show_full_balance(@cryptocoins))}", investments_path, style: 'color:yellow;' %></p>
 
 </div>
 
 </div>
-
+<br></br>
+<div class="portfolio">
 <h2> Portfolio: </h2>
 
 <ul>
@@ -27,6 +28,7 @@
   <% end %>
   <% end %>
   </ul>
+  </div>
 
   <% if false %>
   <%= link_to "Sell All", [:destroy_all, :investments], method: :delete, data: { confirm: "Are you sure?" } %>

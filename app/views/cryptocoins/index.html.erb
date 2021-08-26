@@ -1,29 +1,44 @@
-<h3> All Availabe Cryptocoin Types: </h3>
 
+<div class="search_box">
 <%= form_tag cryptocoins_path, :method => "get" do %>
-    <%= label_tag(:search, "Search for Crypto Type:") %>
-    <%= text_field_tag :search, params[:search] %>
+    <%= label_tag(:search, "Find Crypto:") %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search All Assets' %>
+    <br></br>
     <%= submit_tag("Search", :name => nil) %>
     <% end %>
-    <br></br>
-   Invest in... <%= link_to(@searched_coins[0].name.capitalize, cryptocoin_path(@searched_coins[0])) %>
+    <br>
+    <%= image_tag "#{@searched_coins[0].abv}.png", style: 'height:8%;width:8%;' %>  <%= link_to(@searched_coins[0].name.capitalize, cryptocoin_path(@searched_coins[0])) %>
     <br></br>
 
     <% if flash[:alert] %>
     <div class="green"><%= flash[:alert] %></div>
-    <% end %> <br><br>
+    <% end %> 
+
+    </div>
+    
+    
+    <br><br>
+
+<div class="portfolio">
+<h3> All Assets: </h3>
 
 <ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
-    <li> <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %> <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> is currently trading at: <span class="price">$<%= @coins["data"]["coins"][index]["price"] %></span>
+
+    <li> <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %> 
+    <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> is currently trading at: 
+    <span class="price">$<%= @coins["data"]["coins"][index]["price"] %></span>
+
     <% if @coins["data"]["coins"][index]["change"] > 0 %>
     <span class="green"> +<%= @coins["data"]["coins"][index]["change"] %></span>
     <% elsif @coins["data"]["coins"][index]["change"] < 0 %>
     <span class="red"><%= @coins["data"]["coins"][index]["change"] %></span>
     <% end %>
     </li>
+
     <h5></h5>
     <br>
     <% end %>
-    
 
     </ul>
+
+    </div>

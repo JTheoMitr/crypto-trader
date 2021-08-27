@@ -173,6 +173,15 @@
     border-radius: 10%;
   }
 
+  .list li {
+    transition: background 2s;
+  }
+
+  .list li:hover {
+    background: #1565C0;
+    background-size: 50%;
+  }
+
   .price {
     color: white;
     font-size: x-large

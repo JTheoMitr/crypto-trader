@@ -3,7 +3,6 @@
 <%= form_tag cryptocoins_path, :method => "get" do %>
     <%= label_tag(:search, "Find Crypto:") %>
     <%= text_field_tag :search, params[:search], placeholder: 'Search All Assets' %>
-    <br></br>
     <%= submit_tag("Search", :name => nil) %>
     <% end %>
     <br>
@@ -25,8 +24,8 @@
 <ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
 
     <li> <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %> 
-    <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> is currently trading at: 
-    <span class="price">$<%= @coins["data"]["coins"][index]["price"] %></span>
+    <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> (<%= @coins["data"]["coins"][index]["symbol"] %>) is currently trading at: 
+    <span class="price"><%= number_to_currency(@coins["data"]["coins"][index]["price"]) %></span>
 
     <% if @coins["data"]["coins"][index]["change"] > 0 %>
     <span class="green"> +<%= @coins["data"]["coins"][index]["change"] %></span>

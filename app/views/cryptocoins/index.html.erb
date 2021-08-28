@@ -23,7 +23,7 @@
 
 <ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
 
-    <li> <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %> 
+    <li> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;' %> 
     <%= link_to(coin.name.capitalize, cryptocoin_path(coin)) %> (<%= @coins["data"]["coins"][index]["symbol"] %>) is currently trading at: 
     <span class="price"><%= number_to_currency(@coins["data"]["coins"][index]["price"]) %></span>
 

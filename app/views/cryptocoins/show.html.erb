@@ -1,6 +1,8 @@
+<div class="show_box"
 <h1> <%= @cryptocoin.name.capitalize %> </h1>
 <p> <%= @cryptocoin.description %> </p>
-<p> <%= @cryptocoin.dollar_value %> </p>
+<p> Currently trading at: <%= @cryptocoin.dollar_value %> </p>
+</div>
 
 <%= link_to("Wallet", cryptocoin_investments_path(@cryptocoin)) %>...
 

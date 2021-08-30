@@ -105,6 +105,19 @@
   
 }
 
+.show_box {
+  margin: auto;
+  border-style: ridge;
+  border-color: whitesmoke;
+  background:#7f7f7f;
+  background:rgba(0,0,0,0.5);
+  
+  max-width: 70%;
+  height: fit-content;
+  padding: 1%;
+  
+}
+
 .balance_box_container {
   display: flex;
   justify-content: space-evenly;

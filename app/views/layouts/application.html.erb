@@ -11,22 +11,17 @@
   </head>
 
   <body>
-
-  <% if false %>
-  <div class="logo">
-  <%= link_to(image_tag("cryptotraderlogo.png"), cryptocoins_path) %>
-  </div>
-  <% end %>
   
   <div class="header">
-  
+  <%= link_to image_tag("cryptotrader_logo_coinLarge.png", :class => "logo"), cryptocoins_path, :class => "logo_box" %>
   <% if !current_user %>
-  <%= link_to image_tag("cryptotrader_logo_coinLarge.png", :class => "logo"), cryptocoins_path, :class => "logo_box_wide" %>
+
   <%= link_to image_tag("google_login.png", width: 150), '/auth/google_oauth2', method: :post, style: 'display:block;padding-top:2.5%' %>
   <%= link_to "Sign Up", '/signup', style: 'display:block;padding-top:3%' %>
   <%= link_to "Log In", '/login', style: 'display:block;padding-top:3%' %>
+
   <% elsif !!current_user %>
-  <%= link_to image_tag("cryptotrader_logo_coinLarge.png", :class => "logo"), cryptocoins_path, :class => "logo_box" %>
+  
   <%= link_to current_user.email, user_path(current_user), style: 'display:block;padding-top:3%' %>
   <%= link_to "Portfolio", investments_path, style: 'display:block;padding-top:3%'  %>
   <%= link_to "Buy", new_investment_path, style: 'display:block;padding-top:3%' %>

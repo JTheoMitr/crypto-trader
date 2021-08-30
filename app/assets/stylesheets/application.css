@@ -236,7 +236,11 @@
     padding: 8px;
   }
   
-  #investments tr:nth-child(even){background-color: #544caa;}
+  #investments tr:nth-child(even){background:#7f7f7f;
+    background:rgba(0,0,0,0.5);}
+
+    #investments tr:nth-child(odd){background:#7f7f7f;
+      background:rgba(0,0,0,0.5);}
   
   #investments tr:hover {background-color: rgb(78, 76, 76);}
   

@@ -2,13 +2,13 @@
 <div class="balance_box">
 <%= image_tag "pixel_cash_one.png", style: 'height:15%;width:15%' %>
 
-<p><%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;' %></p>
+<h4><%= link_to "USD Available: #{number_to_currency(current_user.wallet)}", new_investment_path, style: 'color:lightgreen;text-decoration:none;' %></h4>
 
 </div>
 <div class="balance_box">
 <%= image_tag "pixel_coin_stack.png", style: 'height:15%;width:15%' %>
 
-<p><%= link_to "Total Funds: #{number_to_currency(current_user.wallet + show_full_balance(@cryptocoins))}", investments_path, style: 'color:yellow;' %></p>
+<h4><%= link_to "Total Funds: #{number_to_currency(current_user.wallet + show_full_balance(@cryptocoins))}", investments_path, style: 'color:gold;text-decoration:none;' %></h4>
 
 </div>
 

@@ -1,5 +1,6 @@
 <%= form_for([@cryptocoin, @investment]) do |f| %>
   <%= display_cryptocoin_fields(@cryptocoin, f) %>
+  <%= image_tag "pixel_coin_stack.png", style: 'height:3%;width:3%;' %>
     <%= f.label "Amount" %>
     <%= f.number_field :amount %>
     <%= f.submit %>

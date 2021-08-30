@@ -17,14 +17,12 @@
 
  h3 {
     font-size: 30px;
-    
     text-align: center;
     text-decoration: none;
   }
 
   h2 {
     font-size: 40px;
-   
     text-align: center;
     text-decoration: underline;
   }
@@ -72,7 +70,6 @@
   border-color: whitesmoke;
   background:#7f7f7f;
   background:rgba(0,0,0,0.5);
-  
   max-width: 30%;
   height: fit-content;
   padding: 1%;
@@ -85,7 +82,6 @@
   border-color: whitesmoke;
   background:#7f7f7f;
   background:rgba(0,0,0,0.5);
-  
   max-width: 80%;
   height: fit-content;
   padding: 1%;
@@ -98,7 +94,6 @@
   border-color: whitesmoke;
   background:#7f7f7f;
   background:rgba(0,0,0,0.5);
-  
   max-width: 30%;
   height: fit-content;
   padding: 1%;
@@ -111,7 +106,6 @@
   border-color: whitesmoke;
   background:#7f7f7f;
   background:rgba(0,0,0,0.5);
-  
   max-width: 70%;
   height: fit-content;
   padding: 1%;
@@ -232,9 +226,9 @@
   }
 
   #investments {
+    display: inline-flex;
     font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+    
   }
   
   #investments td, #investments th {
@@ -250,14 +244,15 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: deepskyblue;
+    background:#7f7f7f;
+    background:rgba(0,0,0,0.5);
     color: white;
   }
 
 
  .alert {
     padding: 2px;
-    color: rgb(73, 5, 5);
+    color: rgb(202, 21, 21);
     text-align: center;
  }
 

@@ -18,13 +18,19 @@ class InvestmentsController < ApplicationController
     def create
 
         @investment = current_user.investments.build(investment_params)
+        coin_details = find_dollarvalue(@investment.cryptocoin.abv)
+
         if (@investment.amount > current_user.wallet)
           redirect_to new_investment_path, alert: "Insufficient Balance"
-        elsif @investment.save
 
-          coin_details = find_dollarvalue(@investment.cryptocoin.abv)
-          new_price = coin_details["Realtime Currency Exchange Rate"]["8. Bid Price"]
+        elsif (coin_details == {"Error Message"=>
+        "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for CURRENCY_EXCHANGE_RATE."})
+                  redirect_to cryptocoins_path, alert: "That coin is currently unavailable for trade"
+
+        elsif @investment.save
           
+          new_price = coin_details["Realtime Currency Exchange Rate"]["8. Bid Price"]
+
           current_user.update(wallet: (current_user.wallet - @investment.amount))
           @investment.cryptocoin.update(dollar_value: new_price)
           @investment.update(yield: @investment.crypto_yield)

@@ -51,7 +51,7 @@ ethclassic = Cryptocoin.create(name: 'ethereum classic', dollar_value: 49.48, ab
 stellar = Cryptocoin.create(name: 'stellar lumens', dollar_value: 0.5, abv: 'XLM', description: 'Stellar Lumens (XLM) is a digital currency that is similar to Ripple, both being created by Jed McCaleb. Whilst based on the same premise, they have a significant difference, in that Lumens cater towards helping individuals transfer money, rather than institutions. With Lumens, McCaleb has taken more of a Bottom-up approach, rather than the Top-down approach of its predecessor.')
 theta = Cryptocoin.create(name: 'theta', dollar_value: 6.244, abv: 'THETA', description: 'The Theta Network is a decentralized video delivery network with its own blockchain. This network aims to provide technical and economic solutions to problems in the streaming sector. The Theta blockchain is designed to incentivize the sharing of bandwidth across the network.')
 
-
+fil = Cryptocoin.create(name: 'Filecoin', dollar_value: 75.58, abv: 'FIL', description: 'Filecoin (FIL) is a cryptocurrency used on the blockchain system called Filecoin. Filecoin is a decentralized storage network that turns cloud storage into an algorithmic market, designed to store humanitys most important information.')
 
 
 

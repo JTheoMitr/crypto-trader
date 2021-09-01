@@ -23,7 +23,7 @@
 
 <ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
 
-    <li> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;' %> 
+    <li><div> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;' %> 
     <%= link_to(@coins["data"]["coins"][index]["name"], cryptocoin_path(@cryptocoins.find_by(abv: @coins["data"]["coins"][index]["symbol"]))) %> (<%= @coins["data"]["coins"][index]["symbol"] %>) is currently trading at: 
     <span class="price"><%= number_to_currency(@coins["data"]["coins"][index]["price"]) %></span>
 
@@ -32,7 +32,7 @@
     <% elsif @coins["data"]["coins"][index]["change"] < 0 %>
     <span class="red"><%= @coins["data"]["coins"][index]["change"] %></span>
     <% end %>
-    </li>
+    </div></li>
 
     <h5></h5>
     <br>

@@ -21,7 +21,7 @@
 <div class="portfolio">
 <h3> All Assets: </h3>
 
-<ul class="list"> <% @cryptocoins.each_with_index do | coin, index | %>
+<ul class="list"> <% @cryptocoins.limit(25).each_with_index do | coin, index | %>
 
     <li><div> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;' %> 
     <%= link_to(@coins["data"]["coins"][index]["name"], cryptocoin_path(@cryptocoins.find_by(abv: @coins["data"]["coins"][index]["symbol"]))) %> (<%= @coins["data"]["coins"][index]["symbol"] %>) is currently trading at: 

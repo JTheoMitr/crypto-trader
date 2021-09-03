@@ -1,4 +1,6 @@
 <h3> Your Withdrawal: </h3>
 
 $<%= @withdrawal.amount %> of 
-<%= @withdrawal.cryptocoin.name %> for <%= @withdrawal.crypto_yield %>
+<%= @withdrawal.cryptocoin.name %> for <%= @withdrawal.crypto_yield %> <br></br>
+
+<%= link_to "Return to Portfolio", investments_path %>

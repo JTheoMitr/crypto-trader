@@ -1,13 +1,20 @@
-<div class="show_box"
-<h1> <%= @cryptocoin.name.capitalize %> </h1>
+<div class="show_box">
+<h3> <%= image_tag "#{@cryptocoin.abv}.png", style: 'height:3%;width:3%;' %> <%= @cryptocoin.name.capitalize %> </h3>
 <p> <%= @cryptocoin.description %> </p>
-<p> Currently trading at: <%= @cryptocoin.dollar_value %> </p>
-</div>
+<p> Currently trading at: <span class="price">$<%= @cryptocoin.dollar_value %></span> </p>
 
+<% if false %>
 <%= link_to("Wallet", cryptocoin_investments_path(@cryptocoin)) %>...
+<% end %>
 
-<%= link_to("Invest in #{@cryptocoin.name}", new_cryptocoin_investment_path(@cryptocoin.id)) %>
+<br>
+
+<span class="price"><%= link_to("Invest in #{@cryptocoin.name.capitalize}", new_cryptocoin_investment_path(@cryptocoin.id)) %></span>
+
+<br></br>
 
 You own a total of <%= @cryptocoin.investments.where(user: current_user).sum(:yield) - @cryptocoin.withdrawals.where(user: current_user).sum(:yield) %>
+<%= @cryptocoin.abv %>
 
 
+</div>

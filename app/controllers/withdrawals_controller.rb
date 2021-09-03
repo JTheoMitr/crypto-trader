@@ -5,10 +5,12 @@ class WithdrawalsController < ApplicationController
     def new
         if !!current_user && params[:cryptocoin_id] && @cryptocoin = Cryptocoin.find_by_id(params[:cryptocoin_id])
           @withdrawal = @cryptocoin.withdrawals.build
+          @withdrawals_past = @cryptocoin.withdrawals.where(user: current_user)
         elsif !current_user
           redirect_to '/login', alert: "Must Be Logged In to Perform Action"
         else
           @withdrawal = Withdrawal.new
+          @withdrawals_past = current_user.withdrawals
         end
       end  
 

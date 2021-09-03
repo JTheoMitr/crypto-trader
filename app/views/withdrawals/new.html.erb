@@ -5,3 +5,35 @@
 <h1> Make a Withdrawal </h1>
 
 <%= render 'form' %>
+<br></br>
+
+</div>
+
+<br></br>
+
+<div class="search_box">
+<h3> All Previous Withdrawals </h3>
+</div>
+
+<br>
+
+<table id="investments">
+  <tr>
+    <th>Cryptocoin Type</th>
+    <th>Amount Withdrawn</th> 
+    <th>Time of Withdrawal</th> 
+    <th>Yield</th>
+    <th>View Order</th>
+  </tr>
+
+  <% @withdrawals_past.each do |wit| %>
+    <tr>
+    <td><%= link_to(wit.cryptocoin.name.capitalize, cryptocoin_path(wit.cryptocoin.id)) %></td>
+    <td><%= wit.amount %></td>
+    <td><%= wit.readable_time %></td>
+    <td><%= wit.yield %></td>
+    <td><%= link_to("VIEW", withdrawal_path(wit)) %></td>
+   
+  </tr>
+  <% end %>
+  </table>

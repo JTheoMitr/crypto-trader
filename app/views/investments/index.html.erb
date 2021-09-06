@@ -23,7 +23,7 @@
   <li>
   <h3>
   <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %>
-  <strong><%= coin.name.capitalize %></strong>: 
+  <strong><%= link_to coin.name.capitalize, cryptocoin_path(coin), style: 'text-decoration:none' %></strong>: 
   <%= (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)).round(5) %>
   <%= coin.abv %> for 
   <span style="color:lightgreen;">$<%= ((coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) * coin.dollar_value).to_f.round(2) %></span>

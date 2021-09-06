@@ -49,9 +49,8 @@ class InvestmentsController < ApplicationController
       else
         @investments = current_user.investments.ordered_by_amount
         coinlist = get_coins()
-        @cryptocoins = Cryptocoin.all.each_with_index do | coin, index |
-          coin.update(dollar_value: coinlist["data"]["coins"][index]["price"])
-        end
+        @cryptocoins = Cryptocoin.all
+        
       end
     end
 
@@ -85,7 +84,7 @@ class InvestmentsController < ApplicationController
         redirect_to new_investment_path
     end
 
-  
+
 
 private
 

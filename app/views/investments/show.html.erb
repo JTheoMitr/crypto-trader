@@ -1,7 +1,9 @@
 <h3> Your Investment: </h3>
 
 $<%= @investment.amount %> for 
-<%= @investment.crypto_yield.round(5) %> of <%= @investment.cryptocoin.name.capitalize %>: Order filled on 
+<%= @investment.crypto_yield.round(5) %> of <%= @investment.cryptocoin.name.capitalize %>
+<br></br>
+Order filled on 
 <%= @investment.readable_time %> <br></br>
 
 <%= link_to "Return to Portfolio", investments_path %>

@@ -20,10 +20,15 @@
 <ul>
 <% @cryptocoins.each do |coin| %>
   <% if (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) > 0 %>
-  <li><h3><%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %>
-  <strong><%= coin.name.capitalize %></strong>: <%= (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)).round(5) %> for 
+  <li>
+  <h3>
+  <%= image_tag "#{coin.abv}.png", style: 'height:3%;width:3%;' %>
+  <strong><%= coin.name.capitalize %></strong>: 
+  <%= (coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)).round(5) %>
+  <%= coin.abv %> for 
   <span style="color:lightgreen;">$<%= ((coin.investments.where(user: current_user).sum(:yield) - coin.withdrawals.where(user: current_user).sum(:yield)) * coin.dollar_value).to_f.round(2) %></span>
-  </h3></li>
+  </h3>
+  </li>
   _
   <% end %>
   <% end %>

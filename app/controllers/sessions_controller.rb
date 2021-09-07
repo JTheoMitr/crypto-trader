@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         u = User.find_by_email(params[:email])
         if u && u.authenticate(params[:password])
             session[:user_id] = u.id
-            redirect_to user_path(u)
+            redirect_to cryptocoins_path
         else
             redirect_to '/login', alert: "Invalid Credentials.  Please Try Again."
         end

@@ -52,6 +52,7 @@ stellar = Cryptocoin.create(name: 'stellar lumens', dollar_value: 0.5, abv: 'XLM
 theta = Cryptocoin.create(name: 'theta', dollar_value: 6.244, abv: 'THETA', description: 'The Theta Network is a decentralized video delivery network with its own blockchain. This network aims to provide technical and economic solutions to problems in the streaming sector. The Theta blockchain is designed to incentivize the sharing of bandwidth across the network.')
 
 fil = Cryptocoin.create(name: 'Filecoin', dollar_value: 75.58, abv: 'FIL', description: 'Filecoin (FIL) is a cryptocurrency used on the blockchain system called Filecoin. Filecoin is a decentralized storage network that turns cloud storage into an algorithmic market, designed to store humanitys most important information.')
+ftt = Cryptocoin.create(name: 'FTX Token', dollar_value: 78.14, abv: 'FTT', description: 'FTX Token (FTT) is a native token of FTX Exchange. With the token, you pay fewer FTX trading fees,receive socialized gains from the insurance fund, you can buy and burn your fees weekly, and use it as collateral for futures trading.')
 
 
 

@@ -10,9 +10,7 @@ User.destroy_all
 Cryptocoin.destroy_all
 Investment.destroy_all
 
-j = User.create({ username: 'john', email: 'john@gmail.com', password: 'john', wallet: 10000})
-a = User.create({ username: 'annie', email: 'annie@gmail.com', password: 'annie', wallet: 10000})
-m = User.create({ username: 'mike', email: 'mike@gmail.com', password: 'mike', wallet: 10000})
+g = User.create({ username: 'guest', email: 'guest@gmail.com', password: 'guest', wallet: 10000})
 
 btc = Cryptocoin.create(name: 'bitcoin', dollar_value: 52383.79, abv: 'BTC', description: 'Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.  Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services.')
 ethereum = Cryptocoin.create(name: 'ethereum', dollar_value: 1389.25, abv: 'ETH', description: 'Ethereum is a decentralized, open-source blockchain featuring smart contract functionality. Ether (ETH) is the native cryptocurrency of the platform. It is the second-largest cryptocurrency by market capitalization, after Bitcoin.  Ethereum is the most actively used blockchain.')
@@ -59,15 +57,3 @@ dai = Cryptocoin.create(name: 'dai', dollar_value: 0.99, abv: 'DAI', description
 
 
 
-
-#try with iteration for first 25
-
-a.investments.create(amount: 975, cryptocoin: btc)
-a.investments.create(amount: 200, cryptocoin: doge)
-a.investments.create(amount: 1000, cryptocoin: stellar)
-
-m.investments.create(amount: 325, cryptocoin: matic)
-m.investments.create(amount: 510, cryptocoin: btc)
-m.investments.create(amount: 550, cryptocoin: pancake)
-m.investments.create(amount: 150, cryptocoin: terra)
-m.investments.create(amount: 680, cryptocoin: ethclassic)

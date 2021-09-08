@@ -53,7 +53,7 @@ theta = Cryptocoin.create(name: 'theta', dollar_value: 6.244, abv: 'THETA', desc
 
 fil = Cryptocoin.create(name: 'Filecoin', dollar_value: 75.58, abv: 'FIL', description: 'Filecoin (FIL) is a cryptocurrency used on the blockchain system called Filecoin. Filecoin is a decentralized storage network that turns cloud storage into an algorithmic market, designed to store humanitys most important information.')
 ftt = Cryptocoin.create(name: 'FTX Token', dollar_value: 78.14, abv: 'FTT', description: 'FTX Token (FTT) is a native token of FTX Exchange. With the token, you pay fewer FTX trading fees,receive socialized gains from the insurance fund, you can buy and burn your fees weekly, and use it as collateral for futures trading.')
-
+algo = Cryptocoin.create(name: 'Algorand', dollar_value: 78.14, abv: 'ALGO', description: 'Algorand (ALGO) is a public blockchain that uses a unique consensus mechanism, called pure proof-of-stake. The company claims that it offers high scalability and that it prevents forks from happening. Algorand makes it simple and fast for developers to build on blockchain; you can build applications on Algorand in your preferred programming languages.')
 
 
 

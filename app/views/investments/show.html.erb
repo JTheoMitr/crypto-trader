@@ -1,12 +1,18 @@
+<div class="show_box">
+
 <h3> Your Investment: </h3>
 
-$<%= @investment.amount %> for 
-<%= @investment.crypto_yield.round(5) %> of <%= @investment.cryptocoin.name.capitalize %>
+<span style="color:lightgreen;">$<%= @investment.amount %></span> for 
+<strong><%= @investment.crypto_yield.round(5) %></strong> of <span style="color:lightblue;"><strong> <%= @investment.cryptocoin.name.capitalize %></strong></span>
 <br></br>
 Order filled on 
 <%= @investment.readable_time %> <br></br>
 
 <%= link_to "Return to Portfolio", investments_path %>
+
+<br></br>
+
+</div>
 
 <% if false %>
 

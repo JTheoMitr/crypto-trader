@@ -1,6 +1,11 @@
+<div class="show_box">
+
 <h3> Your Withdrawal: </h3>
 
-$<%= @withdrawal.amount %> of 
-<%= @withdrawal.cryptocoin.name %> for <%= @withdrawal.crypto_yield %> <br></br>
+<span style="color:lightgreen;">$<%= @withdrawal.amount %></span> has been added to your TraderBux wallet <br></br>
+
+<%= @withdrawal.crypto_yield %><span style="color:lightblue;"> <strong><%= @withdrawal.cryptocoin.abv %></strong></span> has been removed from your portfolio <br></br>
 
 <%= link_to "Return to Portfolio", investments_path %>
+
+</div>

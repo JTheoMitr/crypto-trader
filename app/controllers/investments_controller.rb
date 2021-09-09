@@ -50,7 +50,7 @@ class InvestmentsController < ApplicationController
         @investments = current_user.investments.ordered_by_amount
         coinlist = get_coins()
        
-        @cryptocoins = Cryptocoin.all.each_with_index do | coin, index |
+        @cryptocoins = Cryptocoin.limit(28).each_with_index do | coin, index |
           c = Cryptocoin.find_by(abv: coinlist["data"]["coins"][index]["symbol"])
           c.update(dollar_value: coinlist["data"]["coins"][index]["price"])
         end

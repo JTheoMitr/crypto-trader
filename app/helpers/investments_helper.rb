@@ -10,11 +10,16 @@ module InvestmentsHelper
 
     def display_cryptocoin_name(cryptocoin)
         if cryptocoin
-            tag.div tag.h1( "Invest in #{cryptocoin.name.capitalize}")
-            #image_tag "#{cryptocoin.abv}.png", style: 'height:3%;width:3%;'
+            tag.h2( "Invest in #{cryptocoin.name.capitalize}")
             
         else
             tag.h2("New Investment")
+        end
+    end
+
+    def display_cryptocoin_logo(cryptocoin)
+        if cryptocoin
+            image_tag "#{cryptocoin.abv}.png", style: 'height:8%;width:8%;'
         end
     end
 

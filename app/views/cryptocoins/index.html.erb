@@ -3,7 +3,7 @@
 <%= form_tag cryptocoins_path, :method => "get" do %>
     <%= label_tag(:search, "Find Crypto:") %>
     <%= text_field_tag :search, params[:search], placeholder: 'Search All Assets' %>
-    <%= submit_tag("Search", :name => nil) %>
+    <%= submit_tag "Search", :name => nil, class: 'button' %>
     <% end %>
     <br>
     <%= image_tag "#{@searched_coins[0].abv}.png", style: 'height:8%;width:8%;' %>  <%= link_to(@searched_coins[0].name.capitalize, cryptocoin_path(@searched_coins[0])) %>

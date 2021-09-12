@@ -58,6 +58,15 @@
      color: whitesmoke;
  }
 
+ .button {
+   background-color: rgba(255, 255, 255,0.3);
+   color: white;
+   border-style: solid;
+   border-width: medium;
+   border-color: lightskyblue;
+   border-radius: 15%;
+ }
+
  a:visited {
      color: whitesmoke
  }

@@ -20,7 +20,10 @@ class InvestmentsController < ApplicationController
         @investment = current_user.investments.build(investment_params)
         coin_details = find_dollarvalue(@investment.cryptocoin.abv)
 
-        if (@investment.amount > current_user.wallet)
+        if (@investment.amount == nil)
+          redirect_to new_investment_path, alert: "Must enter an amount"
+
+        elsif (@investment.amount > current_user.wallet)
           redirect_to new_investment_path, alert: "Insufficient Balance"
 
         elsif (coin_details == {"Error Message"=>

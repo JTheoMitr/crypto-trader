@@ -30,6 +30,9 @@ class InvestmentsController < ApplicationController
         "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for CURRENCY_EXCHANGE_RATE."})
                   redirect_to cryptocoins_path, alert: "That coin is currently unavailable for trade"
 
+        elsif (coin_details == nil)
+        redirect_to cryptocoins_path, alert: "Whoops, something went wrong"
+
         elsif @investment.save
           
           new_price = coin_details["Realtime Currency Exchange Rate"]["8. Bid Price"]

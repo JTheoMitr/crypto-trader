@@ -23,7 +23,7 @@ From here, you will need a RapidAPI key to launch CryptoTrader.  Head to RapidAP
 
 RAPIDAPI_API_KEY=YOUR-API-KEY-HERE rails server
 
-(replace YOUR-API-KEY-HERE with the key you were provided with)
+(replace YOUR-API-KEY-HERE with the key you were provided)
 
 once the server is running, you can navigate to the dedicated port (http://localhost:3000) and follow the on-screen prompts / links to use the application.
 

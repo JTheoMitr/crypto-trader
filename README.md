@@ -34,7 +34,9 @@ User Info
 You can create an account within CryptoTrader or log in with your existing Google Account.  A guest user account has also been set up in the seed file, if you'd rather jump right in as a guest. The information is as follows:
 
 username: guest
+
 email: guest@gmail.com
+
 password: guest
 
 

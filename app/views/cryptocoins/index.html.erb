@@ -25,7 +25,7 @@
 
     
 
-    <li><div> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;', alt: "Coin Logo" %> 
+    <li><div> <%= image_tag "#{@coins["data"]["coins"][index]["symbol"]}.png", style: 'height:3%;width:3%;' rescue image_tag "COIN.png", style: 'height:3%;width:3%;' %> 
     <%= link_to(@coins["data"]["coins"][index]["name"], cryptocoin_path(@cryptocoins.find_or_create_by(abv: @coins["data"]["coins"][index]["symbol"]))) %> (<%= @coins["data"]["coins"][index]["symbol"] %>) is currently trading at: 
     <span class="price"><%= number_to_currency(@coins["data"]["coins"][index]["price"]) %></span>
 
